@@ -22,13 +22,16 @@ Every number above is recomputed by `python3 tools/data/update_readme.py`; `data
 ## Running it
 
 ```bash
-nvm use            # Node 24 (see .nvmrc); Angular CLI 22.2 needs Node 22.22.3+ or 24
+nvm use            # Node 24 (see .nvmrc); Angular CLI 22.2 needs Node 22.22.3+ or 24.15+
 npm ci
 npm start          # http://localhost:4200
 ```
 
 `npm test` runs the unit tests (vitest), `npm run build` makes the production bundle in
-`dist/bangalore-tech-map/browser/` — a static site that any host can serve.
+`dist/bangalore-tech-map/browser/`, a static site that any host can serve from a domain root.
+`src/index.html` sets `<base href="/">`, so to serve it under a sub-path, such as a GitHub Pages
+project site at `https://<user>.github.io/Placement-office-/`, build with
+`npx ng build --base-href /Placement-office-/`; otherwise the bundle and `data/dataset.json` 404.
 
 The map is pinned to Bengaluru: it cannot be panned out of the metro box, and the dataset refuses any
 coordinate outside it (lat 12.75–13.25, lng 77.35–77.90). Hosur, Mysuru and the rest of Karnataka are

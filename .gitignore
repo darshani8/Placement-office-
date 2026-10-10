@@ -38,6 +38,11 @@ yarn-error.log
 testem.log
 /typings
 __screenshots__/
+__pycache__/
+*.pyc
+
+# geocode.py's lock, rate-limit stamp and temp file sit beside the cache (the cache itself is tracked)
+/data/geocode-cache.json.*
 
 # System files
 .DS_Store

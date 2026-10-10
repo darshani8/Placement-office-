@@ -13,7 +13,7 @@ Rules baked in:
   * Results are RESTRICTED to the Bengaluru metro box (lat 12.75..13.25, lng 77.35..77.90).
     Anything outside is discarded -> ok:false. Never geocode something outside Bangalore with this.
   * Nominatim first (1.1 s between calls -- their usage policy), Photon (komoot) as fallback.
-  * Cache at ../data/geocode-cache.json so repeated runs cost nothing. Delete an entry to re-query.
+  * Cache at data/geocode-cache.json (repository root) so repeated runs cost nothing. Delete an entry to re-query.
   * Appending ", Bengaluru" to a bare name is done for you.
 """
 import fcntl, json, os, sys, time, urllib.parse, urllib.request
