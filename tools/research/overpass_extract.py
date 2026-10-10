@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Pull every NAMED office POI and every tech/business park polygon inside the Bengaluru box from OSM.
-Writes ../data/osm-offices.json and ../data/osm-techparks.json. Run once; it is slow (minutes)."""
+Writes data/osm/osm-offices.json and data/osm/osm-techparks.json (repository root). Run once; it is slow (minutes)."""
 import json, os, sys, time, urllib.parse, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "..", "data", "osm")

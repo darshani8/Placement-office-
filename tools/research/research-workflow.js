@@ -6,9 +6,14 @@ export const meta = {
   ],
 }
 
-const TOOLS = (args && args.tools) || '<absolute path to>/bangalore-tech-map/tools/research'
-const DATA = (args && args.data) || '<absolute path to>/bangalore-tech-map/data/osm'
-const RAW = (args && args.raw) || '<absolute path to>/bangalore-tech-map/data/raw'
+// Every agent is told to run these paths, so a guessed default would send them all to a folder that
+// does not exist. Pass absolute paths into your clone.
+if (!args || !args.tools || !args.data || !args.raw) {
+  throw new Error('pass args.tools, args.data and args.raw: absolute paths to tools/research, data/osm and data/raw in your clone')
+}
+const TOOLS = args.tools
+const DATA = args.data
+const RAW = args.raw
 
 const OFFICE = {
   type: 'object',
